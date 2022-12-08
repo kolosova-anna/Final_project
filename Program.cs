@@ -18,12 +18,12 @@ void PrintArray(string[] array)
 }
 
 
-string[] LessFourSimbolsArray(string[] array)
+string[] LessFourSimbolsArray(string[] array, int number)
 {
     int count = 0;
     for (int i = 0; i < array.Length; i++)
     {
-        if (array[i].Length < 4)
+        if (array[i].Length < number + 1)
         {
             count += 1;
         }
@@ -34,7 +34,7 @@ string[] LessFourSimbolsArray(string[] array)
     for (int i = 0; i < array.Length; i++)
     {
  
-        if (array[i].Length < 4)
+        if (array[i].Length < number + 1)
         {
             newArr[j] = array[i];
             j++;
@@ -44,6 +44,7 @@ string[] LessFourSimbolsArray(string[] array)
     return newArr;
 }
 string[] textArray = { "Маша", "Оля", "Ян", "Петя", "Ира" };
+int num = 3;
 PrintArray(textArray);
-string[] lessFourSimbolsArray = LessFourSimbolsArray(textArray);
+string[] lessFourSimbolsArray = LessFourSimbolsArray(textArray, num);
 PrintArray(lessFourSimbolsArray);
