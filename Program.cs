@@ -6,3 +6,44 @@
 // Пример:
 // ["hello". "2", "world", ":-)"] -> ["2", ":-)"]
 
+void PrintArray(string[] array)
+{
+    Console.Write("[");
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (i < array.Length - 1) Console.Write($"{array[i]}, ");
+        else Console.Write($"{array[i]}");
+    }
+    Console.WriteLine("]");
+}
+
+
+string[] LessFourSimbolsArray(string[] array)
+{
+    int count = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i].Length < 4)
+        {
+            count += 1;
+        }
+    }
+
+    string[] newArr = new string[count];
+    int j = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+ 
+        if (array[i].Length < 4)
+        {
+            newArr[j] = array[i];
+            j++;
+        }
+
+    }
+    return newArr;
+}
+string[] textArray = { "Маша", "Оля", "Ян", "Петя", "Ира" };
+PrintArray(textArray);
+string[] lessFourSimbolsArray = LessFourSimbolsArray(textArray);
+PrintArray(lessFourSimbolsArray);
